@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:element name="Groups" type="GroupType">
+    <xsd:key name="Group-id">
+        <xsd:selector xpath="グループ" />
+        <xsd:field xpath="@GID" />
+    </xsd:key>
+</xsd:element>
+
+<xsd:complexType name="GroupType">
+    <xsd:sequence>
+        <xsd:element ref="グループ" maxOccurs="unbounded" />
+    </xsd:sequence>
+</xsd:complexType>
+
+<xsd:element name="グループ" type="GrpType" />
+
+<xsd:complexType name="GrpType">
+    <xsd:sequence>
+        <xsd:element name="グループ名" type="xsd:string" />
+        <xsd:element name="グループ郵便番号" type="xsd:string" />
+        <xsd:element name="グループ住所" type="xsd:string" />
+        <xsd:element name="グループ組織名" type="xsd:string" />
+        <xsd:element name="グループ部局名" type="xsd:string" />
+        <xsd:element name="代表教職員名" type="xsd:string" />
+        <xsd:element name="代表教職員電話番号" type="xsd:string" />
+        <xsd:element name="代表教職員FAX番号" type="xsd:string" />
+        <xsd:element name="代表教職員Email" type="xsd:string" />
+        <xsd:element name="登録者名" type="xsd:string" />
+        <xsd:element name="登録者電話番号" type="xsd:string" />
+        <xsd:element name="登録者Email" type="xsd:string" />
+        <xsd:element name="更新日" type="xsd:string" />
+        <xsd:element name="更新時刻" type="xsd:string" />
+        <xsd:element name="パスワード" type="xsd:string" />
+    </xsd:sequence>
+    <xsd:attribute name="GID" type="xsd:positiveInteger" use="required" />
+</xsd:complexType>
+
+</xsd:schema> 
